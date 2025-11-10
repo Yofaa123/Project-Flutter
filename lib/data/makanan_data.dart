@@ -105,4 +105,39 @@ final List<Makanan> daftarMakanan = [
     saranPenyajian:
         'Sajikan hangat dengan nasi putih, sambal pencit atau sambal terasi, dan lalapan segar.',
   ),
+
+  Makanan(
+    nama: 'Soto Madura',
+    deskripsi:
+        'Soto khas Madura dengan kuah bening gurih, aroma rempah kuat, biasanya memakai daging sapi atau ayam serta taburan bawang goreng.',
+    gambar: 'soto.jpeg',
+    bahan: [
+      '500 gr daging sapi / ayam (pilih salah satu)',
+      '2 liter air untuk kuah',
+      '2 batang serai (memarkan)',
+      '3 lembar daun jeruk',
+      '2 lembar daun salam',
+      '1 ruas lengkuas (memarkan)',
+      'Minyak untuk menumis',
+      'Garam dan gula secukupnya',
+    ],
+    bumbu: [
+      '7 siung bawang merah',
+      '5 siung bawang putih',
+      '3 butir kemiri sangrai',
+      '1 sdt merica butir',
+      '1 sdt ketumbar',
+      '1 ruas kunyit',
+      '1 ruas jahe',
+    ],
+    langkah: [
+      'Rebus daging hingga empuk, angkat dan potong-potong, sisihkan kaldu.',
+      'Haluskan semua bumbu lalu tumis hingga harum.',
+      'Masukkan bumbu tumis ke dalam kaldu, tambahkan daun salam, daun jeruk, serai, dan lengkuas.',
+      'Masak sampai kuah mendidih dan bumbu meresap, koreksi rasa.',
+      'Masukkan potongan daging kembali ke dalam kuah sebelum disajikan.',
+    ],
+    saranPenyajian:
+        'Sajikan panas dengan potongan kentang rebus, telur rebus, seledri, bawang goreng, jeruk nipis, dan sambal.',
+  ),
 ];
