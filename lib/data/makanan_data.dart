@@ -263,4 +263,38 @@ final List<Makanan> daftarMakanan = [
     saranPenyajian:
         'Sajikan di cobek agar lebih autentik, dan tambah kerupuk serta perasan jeruk bila suka.',
   ),
+
+  Makanan(
+    nama: 'Campor Lorjuk',
+    deskripsi:
+        'Campuran lontong dengan lorjuk (kerang kecil khas Madura) yang disiram kuah gurih dan bumbu rempah.',
+    gambar: 'campor.jpeg',
+    bahan: [
+      '200 gr lorjuk (kerang kecil, bersihkan)',
+      '3 buah lontong (potong-potong)',
+      '1 buah tahu goreng (potong dadu)',
+      '50 gr taoge (rebus)',
+      '2 lembar daun jeruk',
+      '1 batang daun bawang (iris)',
+      'Air secukupnya untuk kuah',
+      'Minyak sedikit untuk menumis',
+    ],
+    bumbu: [
+      '4 siung bawang merah',
+      '3 siung bawang putih',
+      '1 ruas kunyit',
+      '1 sdt ketumbar',
+      '1/2 sdt merica',
+      'Garam secukupnya',
+      'Gula secukupnya',
+    ],
+    langkah: [
+      'Haluskan bawang merah, bawang putih, kunyit, ketumbar, dan merica.',
+      'Tumis bumbu halus hingga harum, masukkan lorjuk dan aduk rata.',
+      'Tuang air, tambahkan daun jeruk, bumbui dengan garam & gula, masak hingga lorjuk matang dan kuah meresap.',
+      'Siapkan mangkuk, tata lontong, taoge, tahu, dan siram dengan kuah lorjuk.',
+      'Taburi irisan daun bawang sebelum disajikan.',
+    ],
+    saranPenyajian: 'Sajikan hangat, tambahkan sambal jika suka rasa pedas.',
+  ),
 ];
