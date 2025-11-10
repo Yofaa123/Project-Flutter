@@ -168,4 +168,36 @@ final List<Makanan> daftarMakanan = [
     saranPenyajian:
         'Sajikan lengkap dengan kuah ringan atau kuah kaldu agar lebih nikmat dan tidak terlalu kering.',
   ),
+
+  Makanan(
+    nama: 'Nasi Kobel',
+    deskripsi:
+        'Nasi khas Madura yang disajikan dengan sambal ikan tongkol suwir pedas (kobel) dan lauk sederhana. Rasanya gurih, pedas, dan sangat menggugah selera.',
+    gambar: 'kobel.jpeg',
+    bahan: [
+      '1 piring nasi putih',
+      '100 gr ikan tongkol (rebus & suwir)',
+      '1 butir telur (dadar atau rebus)',
+      'Sedikit minyak untuk menumis',
+      'Garam & gula secukupnya',
+    ],
+    bumbu: [
+      '5 buah cabai merah',
+      '7 buah cabai rawit (sesuaikan tingkat pedas)',
+      '3 siung bawang merah',
+      '2 siung bawang putih',
+      '1 buah tomat kecil',
+      '1 sdt terasi bakar',
+      'Garam & gula secukupnya',
+    ],
+    langkah: [
+      'Haluskan cabai, bawang, tomat, dan terasi.',
+      'Tumis bumbu halus hingga harum, bumbui garam & gula.',
+      'Masukkan tongkol suwir, aduk hingga bumbu meresap.',
+      'Siapkan nasi di piring, letakkan kobel di atasnya.',
+      'Tambahkan telur dan lauk tambahan sesuai selera.',
+    ],
+    saranPenyajian:
+        'Nikmati saat masih hangat dengan kerupuk dan perasan jeruk limau agar lebih segar.',
+  ),
 ];
