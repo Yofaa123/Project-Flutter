@@ -65,4 +65,44 @@ final List<Makanan> daftarMakanan = [
     saranPenyajian:
         'Sajikan hangat dengan sambal terasi, nasi putih, dan lalapan segar.',
   ),
+
+  Makanan(
+    nama: 'Bebek Bumbu Hitam',
+    deskripsi:
+        'Bebek khas Madura yang dimasak dengan bumbu hitam dari rempah dan kluwek, menghasilkan rasa gurih, pedas, dan kaya rempah.',
+    gambar: 'hitam.jpeg',
+    bahan: [
+      '1 ekor bebek, potong 4-6 bagian',
+      '2 buah kluwek (ambil isinya)',
+      '3 lembar daun jeruk',
+      '2 batang serai (memarkan)',
+      '3 lembar daun salam',
+      'Air asam jawa secukupnya',
+      'Minyak secukupnya',
+      'Garam dan gula secukupnya',
+    ],
+    bumbu: [
+      '10 siung bawang merah',
+      '6 siung bawang putih',
+      '4 butir kemiri sangrai',
+      '1 ruas jahe',
+      '1 ruas lengkuas',
+      '1 ruas kunyit',
+      '1 sdt ketumbar',
+      '1 sdt merica',
+      '5 buah cabai merah besar',
+      '5-10 cabai rawit (sesuai selera)',
+    ],
+    langkah: [
+      'Bersihkan bebek dan lumuri dengan air asam jawa, garam, dan diamkan 15-20 menit.',
+      'Haluskan semua bumbu bersama kluwek hingga benar-benar lembut.',
+      'Tumis bumbu halus hingga wangi dan berubah warna lebih gelap.',
+      'Masukkan daun salam, daun jeruk, dan serai, aduk rata.',
+      'Masukkan potongan bebek, aduk hingga bumbu meresap dan berubah warna.',
+      'Tambahkan air secukupnya, masak dengan api kecil 1-1,5 jam hingga kuah mengental dan bebek empuk.',
+      'Masak hingga bumbu menghitam pekat dan berminyak, koreksi rasa.',
+    ],
+    saranPenyajian:
+        'Sajikan hangat dengan nasi putih, sambal pencit atau sambal terasi, dan lalapan segar.',
+  ),
 ];
