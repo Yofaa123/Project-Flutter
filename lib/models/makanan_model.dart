@@ -1,7 +1,7 @@
 class Makanan {
   final String nama;
   final String deskripsi;
-  final String gambar; // nama file di assets/images/
+  final String gambar;
   final List<String> bahan;
   final List<String> bumbu;
   final List<String> langkah;

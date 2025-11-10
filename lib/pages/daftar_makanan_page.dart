@@ -60,7 +60,7 @@ class DaftarMakananPage extends StatelessWidget {
       pageBuilder: (context, animation, secondaryAnimation) =>
           DetailMakananPage(makanan: makanan),
       transitionsBuilder: (context, animation, secondaryAnimation, child) {
-        const begin = Offset(1.0, 0.0); // masuk dari kanan
+        const begin = Offset(1.0, 0.0);
         const end = Offset.zero;
         const curve = Curves.ease;
         final tween = Tween(

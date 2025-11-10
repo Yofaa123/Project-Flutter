@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../models/makanan_model.dart';
-import 'package:share_plus/share_plus.dart'; // butuh dependency
+import 'package:share_plus/share_plus.dart';
 
 class DetailMakananPage extends StatefulWidget {
   final Makanan makanan;
@@ -15,7 +15,6 @@ class _DetailMakananPageState extends State<DetailMakananPage> {
 
   void toggleFavorite() {
     setState(() => isFavorite = !isFavorite);
-    // untuk production: simpan ke local storage (shared_preferences) atau DB
   }
 
   void shareResep() {
@@ -66,7 +65,6 @@ class _DetailMakananPageState extends State<DetailMakananPage> {
               ),
             ),
 
-            // Konten putih
             Container(
               width: double.infinity,
               transform: Matrix4.translationValues(0, -20, 0),
@@ -81,7 +79,6 @@ class _DetailMakananPageState extends State<DetailMakananPage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // nama + favorite/share
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -123,7 +120,6 @@ class _DetailMakananPageState extends State<DetailMakananPage> {
                   ),
                   const SizedBox(height: 18),
 
-                  // Bahan
                   const Text(
                     'Bahan',
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
@@ -143,7 +139,6 @@ class _DetailMakananPageState extends State<DetailMakananPage> {
                   ),
 
                   const SizedBox(height: 12),
-                  // Bumbu
                   const Text(
                     'Bumbu',
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
@@ -163,7 +158,6 @@ class _DetailMakananPageState extends State<DetailMakananPage> {
                   ),
 
                   const SizedBox(height: 12),
-                  // Langkah
                   const Text(
                     'Cara Memasak',
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
@@ -199,7 +193,7 @@ class _DetailMakananPageState extends State<DetailMakananPage> {
           ],
         ),
       ),
-      backgroundColor: const Color(0xFFFFF8F0), // krem lembut sesuai tema
+      backgroundColor: const Color(0xFFFFF8F0),
     );
   }
 }
