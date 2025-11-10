@@ -140,4 +140,32 @@ final List<Makanan> daftarMakanan = [
     saranPenyajian:
         'Sajikan panas dengan potongan kentang rebus, telur rebus, seledri, bawang goreng, jeruk nipis, dan sambal.',
   ),
+
+  Makanan(
+    nama: 'Nasi Serpang',
+    deskripsi:
+        'Hidangan khas Bangkalan berupa nasi putih dengan aneka lauk seperti cumi item, telur, dendeng, sambal, dan kerupuk, disajikan lengkap dan kaya rasa.',
+    gambar: 'serpang.jpeg',
+    bahan: [
+      '1 piring nasi putih',
+      '1 butir telur rebus',
+      '50 gr dendeng ragi atau serundeng',
+      '50 gr cumi bumbu hitam (optional)',
+      'Kerupuk atau emping secukupnya',
+      'Sambal terasi secukupnya',
+    ],
+    bumbu: [
+      'Bawang merah goreng untuk taburan',
+      'Sambal terasi (cabai, terasi, garam, gula, tomat)',
+      'Sedikit kecap manis (opsional)',
+    ],
+    langkah: [
+      'Siapkan nasi putih hangat di piring.',
+      'Tata lauk pauk seperti telur, dendeng/serundeng, dan cumi item di atas nasi.',
+      'Tambahkan kerupuk dan sambal terasi di sampingnya.',
+      'Beri taburan bawang goreng agar semakin harum.',
+    ],
+    saranPenyajian:
+        'Sajikan lengkap dengan kuah ringan atau kuah kaldu agar lebih nikmat dan tidak terlalu kering.',
+  ),
 ];
