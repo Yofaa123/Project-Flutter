@@ -200,4 +200,32 @@ final List<Makanan> daftarMakanan = [
     saranPenyajian:
         'Nikmati saat masih hangat dengan kerupuk dan perasan jeruk limau agar lebih segar.',
   ),
+
+  Makanan(
+    nama: 'Nasi Jagung',
+    deskripsi:
+        'Nasi jagung khas Madura yang terbuat dari campuran beras dan jagung tumbuk, disajikan dengan lauk sederhana namun kaya rasa.',
+    gambar: 'jagung.jpeg',
+    bahan: [
+      '200 gr jagung pipil kering (tumbuk kasar / menir jagung)',
+      '200 gr beras',
+      'Air secukupnya untuk memasak',
+      '1/2 sdt garam',
+      'Sayur urap atau sayur bening sebagai pendamping',
+    ],
+    bumbu: [
+      'Ikan asin goreng',
+      'Sambal terasi',
+      'Parutan kelapa berbumbu (untuk urap): bawang putih, bawang merah, cabai, garam, dan kencur',
+    ],
+    langkah: [
+      'Cuci beras dan menir jagung hingga bersih.',
+      'Campurkan beras dan jagung, tambahkan garam, lalu masak seperti memasak nasi biasa.',
+      'Siapkan urap: kukus kelapa parut dan bumbu halus, lalu campurkan.',
+      'Goreng ikan asin hingga matang dan renyah.',
+      'Sajikan nasi jagung dengan urap, sambal, dan ikan asin.',
+    ],
+    saranPenyajian:
+        'Paling nikmat disantap hangat bersama ikan asin dan sambal terasi pedas.',
+  ),
 ];
