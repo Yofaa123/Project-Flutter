@@ -228,4 +228,39 @@ final List<Makanan> daftarMakanan = [
     saranPenyajian:
         'Paling nikmat disantap hangat bersama ikan asin dan sambal terasi pedas.',
   ),
+
+  Makanan(
+    nama: 'Rujak Cingur',
+    deskripsi:
+        'Rujak khas Jawa Timur yang menggunakan cingur sapi sebagai isian, disiram bumbu petis kacang yang kaya rasa.',
+    gambar: 'rujak.jpeg',
+    bahan: [
+      '150 gr cingur sapi (rebus hingga empuk)',
+      '1 buah mentimun (potong dadu)',
+      '1 buah bengkuang (potong dadu)',
+      '1 buah mangga muda (iris tipis)',
+      '1 ikat kangkung (rebus)',
+      'Tauge secukupnya (rebus)',
+      '1 buah lontong (potong-potong)',
+      'Tempe & tahu goreng (potong-potong)',
+    ],
+    bumbu: [
+      '3 sdm kacang tanah goreng',
+      '2 sdt petis udang',
+      '1 siung bawang putih',
+      '1 buah cabai rawit (sesuaikan selera)',
+      '1 sdt gula merah',
+      '1 sdt garam',
+      'Air matang sedikit untuk mengencerkan',
+    ],
+    langkah: [
+      'Siapkan semua bahan isian: potong buah, rebus kangkung & taoge, siapkan cingur rebus.',
+      'Haluskan kacang tanah, bawang putih, cabai, gula, dan garam.',
+      'Tambahkan petis dan sedikit air, ulek kembali hingga bumbu tercampur rata.',
+      'Campurkan semua bahan dalam satu cobek, ulek perlahan agar bumbu menyatu.',
+      'Sajikan dengan tambahan kerupuk di atasnya.',
+    ],
+    saranPenyajian:
+        'Sajikan di cobek agar lebih autentik, dan tambah kerupuk serta perasan jeruk bila suka.',
+  ),
 ];
