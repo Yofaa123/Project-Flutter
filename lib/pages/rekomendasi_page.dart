@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../data/makanan_data.dart';
+import '../data/makanan_data.dart'; // pastikan file ini berisi data makanan kamu
 import '../models/makanan_model.dart';
 import 'detail_makanan_page.dart';
 
@@ -13,44 +13,56 @@ class RekomendasiPage extends StatefulWidget {
 class _RekomendasiPageState extends State<RekomendasiPage> {
   String? waktuMakan;
   String? rasa;
-  List<String> rekomendasi = [];
+  List<Makanan> rekomendasi = [];
 
   void getRekomendasi() {
     if (waktuMakan == null || rasa == null) {
       setState(() {
-        rekomendasi = ['Silakan pilih semua opsi terlebih dahulu.'];
+        rekomendasi = [];
       });
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Silakan pilih semua opsi terlebih dahulu.'),
+        ),
+      );
       return;
     }
 
-    List<String> hasil = [];
+    List<Makanan> hasil = [];
+
+    // Ambil dari data makanan berdasarkan nama
+    Makanan? cari(String nama) {
+      try {
+        return daftarMakanan.firstWhere((m) => m.nama == nama);
+      } catch (_) {
+        return null;
+      }
+    }
 
     if (waktuMakan == 'Pagi') {
       if (rasa == 'Gurih') {
-        hasil = ['Nasi Serpang', 'Campor Lorjuk'];
+        hasil = [cari('Nasi Serpang')!, cari('Campor Lorjuk')!];
       } else if (rasa == 'Pedas') {
-        hasil = ['Rujak Cingur', 'Nasi Kobel'];
+        hasil = [cari('Rujak Cingur')!, cari('Nasi Kobel')!];
       } else {
-        hasil = ['Nasi Kobel'];
+        hasil = [cari('Nasi Kobel')!];
       }
     } else if (waktuMakan == 'Siang') {
       if (rasa == 'Pedas') {
-        hasil = ['Sate Madura', 'Bebek Bumbu Hitam'];
+        hasil = [cari('Sate Madura')!, cari('Bebek Bumbu Hitam')!];
       } else if (rasa == 'Gurih') {
-        hasil = ['Nasi Jagung', 'Campor Lorjuk'];
+        hasil = [cari('Nasi Jagung')!, cari('Campor Lorjuk')!];
       } else {
-        hasil = ['Soto Madura'];
+        hasil = [cari('Soto Madura')!];
       }
     } else if (waktuMakan == 'Malam') {
       if (rasa == 'Pedas') {
-        hasil = ['Bebek Songkem', 'Sate Madura'];
+        hasil = [cari('Bebek Songkem')!, cari('Sate Madura')!];
       } else if (rasa == 'Gurih') {
-        hasil = ['Soto Madura', 'Bebek Bumbu Hitam'];
+        hasil = [cari('Soto Madura')!, cari('Bebek Bumbu Hitam')!];
       } else {
-        hasil = ['Nasi Serpang'];
+        hasil = [cari('Nasi Serpang')!];
       }
-    } else {
-      hasil = ['Tidak ada rekomendasi yang sesuai.'];
     }
 
     setState(() {
@@ -90,7 +102,7 @@ class _RekomendasiPageState extends State<RekomendasiPage> {
               ),
               const SizedBox(height: 30),
 
-              // Dropdown Waktu Makan
+              // Dropdown Waktu
               Card(
                 elevation: 3,
                 shape: RoundedRectangleBorder(
@@ -146,7 +158,6 @@ class _RekomendasiPageState extends State<RekomendasiPage> {
 
               const SizedBox(height: 30),
 
-              // Tombol Tampilkan Rekomendasi
               ElevatedButton.icon(
                 onPressed: getRekomendasi,
                 icon: const Icon(Icons.fastfood, color: Colors.white),
@@ -166,7 +177,6 @@ class _RekomendasiPageState extends State<RekomendasiPage> {
 
               const SizedBox(height: 30),
 
-              // Hasil Rekomendasi
               if (rekomendasi.isNotEmpty)
                 Expanded(
                   child: Column(
@@ -185,53 +195,44 @@ class _RekomendasiPageState extends State<RekomendasiPage> {
                         child: ListView.builder(
                           itemCount: rekomendasi.length,
                           itemBuilder: (context, index) {
-                            return AnimatedContainer(
-                              duration: const Duration(milliseconds: 300),
-                              curve: Curves.easeInOut,
-                              margin: const EdgeInsets.symmetric(vertical: 6),
-                              child: Card(
-                                color: Colors.white,
-                                elevation: 3,
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(12),
-                                ),
-                                child: ListTile(
-                                  leading: const Icon(
-                                    Icons.restaurant_menu,
-                                    color: Colors.redAccent,
+                            final makanan = rekomendasi[index];
+                            return Card(
+                              color: Colors.white,
+                              elevation: 3,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(12),
+                              ),
+                              child: ListTile(
+                                leading: ClipRRect(
+                                  borderRadius: BorderRadius.circular(8),
+                                  child: Image.asset(
+                                    'assets/images/${makanan.gambar}',
+                                    width: 60,
+                                    height: 60,
+                                    fit: BoxFit.cover,
                                   ),
-                                  title: Text(
-                                    rekomendasi[index],
-                                    style: const TextStyle(
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.w600,
+                                ),
+                                title: Text(
+                                  makanan.nama,
+                                  style: const TextStyle(
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                ),
+                                subtitle: Text(
+                                  makanan.deskripsi,
+                                  maxLines: 2,
+                                  overflow: TextOverflow.ellipsis,
+                                ),
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (_) =>
+                                          DetailMakananPage(makanan: makanan),
                                     ),
-                                  ),
-                                  onTap: () {
-                                    // cari data makanan dari daftarMakanan
-                                    final hasil = daftarMakanan.firstWhere(
-                                      (item) => item.nama == rekomendasi[index],
-                                      orElse: () => Makanan(
-                                        nama: rekomendasi[index],
-                                        deskripsi: 'Detail tidak ditemukan.',
-                                        gambar: '',
-                                        bahan: [],
-                                        bumbu: [],
-                                        langkah: [],
-                                        saranPenyajian: '',
-                                      ),
-                                    );
-
-                                    // navigasi ke halaman detail
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                        builder: (context) =>
-                                            DetailMakananPage(makanan: hasil),
-                                      ),
-                                    );
-                                  },
-                                ),
+                                  );
+                                },
                               ),
                             );
                           },
