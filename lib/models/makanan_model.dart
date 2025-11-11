@@ -16,4 +16,14 @@ class Makanan {
     required this.langkah,
     required this.saranPenyajian,
   });
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is Makanan &&
+          runtimeType == other.runtimeType &&
+          nama == other.nama;
+
+  @override
+  int get hashCode => nama.hashCode;
 }

@@ -10,8 +10,12 @@ class DaftarMakananPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Daftar Makanan Khas Madura'),
+        title: const Text(
+          "Daftar Makanan",
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
         backgroundColor: Colors.redAccent,
+        centerTitle: true,
       ),
       body: ListView.builder(
         itemCount: daftarMakanan.length,

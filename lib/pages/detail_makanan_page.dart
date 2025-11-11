@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import '../models/makanan_model.dart';
+import 'package:provider/provider.dart';
 import 'package:share_plus/share_plus.dart';
+import '../models/makanan_model.dart';
+import '../providers/favorite_provider.dart';
 
 class DetailMakananPage extends StatefulWidget {
   final Makanan makanan;
@@ -11,12 +13,6 @@ class DetailMakananPage extends StatefulWidget {
 }
 
 class _DetailMakananPageState extends State<DetailMakananPage> {
-  bool isFavorite = false;
-
-  void toggleFavorite() {
-    setState(() => isFavorite = !isFavorite);
-  }
-
   void shareResep() {
     final m = widget.makanan;
     final text = StringBuffer()
@@ -36,6 +32,7 @@ class _DetailMakananPageState extends State<DetailMakananPage> {
       )
       ..writeln('\nSaran Penyajian:')
       ..writeln(m.saranPenyajian);
+
     Share.share(text.toString(), subject: 'Resep ${m.nama}');
   }
 
@@ -79,6 +76,7 @@ class _DetailMakananPageState extends State<DetailMakananPage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  // Judul dan tombol icon
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -94,14 +92,24 @@ class _DetailMakananPageState extends State<DetailMakananPage> {
                       ),
                       Row(
                         children: [
-                          IconButton(
-                            onPressed: toggleFavorite,
-                            icon: Icon(
-                              isFavorite
-                                  ? Icons.favorite
-                                  : Icons.favorite_border,
-                              color: Colors.redAccent,
-                            ),
+                          // Tombol Favorite pakai Provider
+                          Consumer<FavoriteProvider>(
+                            builder: (context, favProvider, _) {
+                              final isFavorit = favProvider.isFavorite(
+                                widget.makanan,
+                              );
+                              return IconButton(
+                                onPressed: () {
+                                  favProvider.toggleFavorite(widget.makanan);
+                                },
+                                icon: Icon(
+                                  isFavorit
+                                      ? Icons.favorite
+                                      : Icons.favorite_border,
+                                  color: Colors.redAccent,
+                                ),
+                              );
+                            },
                           ),
                           IconButton(
                             onPressed: shareResep,

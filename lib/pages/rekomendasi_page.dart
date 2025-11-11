@@ -74,7 +74,10 @@ class _RekomendasiPageState extends State<RekomendasiPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Rekomendasi Makanan"),
+        title: const Text(
+          "Rekomendasi Makanan",
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
         backgroundColor: Colors.redAccent,
         centerTitle: true,
       ),
