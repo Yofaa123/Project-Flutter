@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import '../data/makanan_data.dart';
+import '../models/makanan_model.dart';
+import 'detail_makanan_page.dart';
 
 class RekomendasiPage extends StatefulWidget {
   const RekomendasiPage({super.key});
@@ -87,6 +90,7 @@ class _RekomendasiPageState extends State<RekomendasiPage> {
               ),
               const SizedBox(height: 30),
 
+              // Dropdown Waktu Makan
               Card(
                 elevation: 3,
                 shape: RoundedRectangleBorder(
@@ -114,6 +118,7 @@ class _RekomendasiPageState extends State<RekomendasiPage> {
 
               const SizedBox(height: 20),
 
+              // Dropdown Rasa
               Card(
                 elevation: 3,
                 shape: RoundedRectangleBorder(
@@ -141,6 +146,7 @@ class _RekomendasiPageState extends State<RekomendasiPage> {
 
               const SizedBox(height: 30),
 
+              // Tombol Tampilkan Rekomendasi
               ElevatedButton.icon(
                 onPressed: getRekomendasi,
                 icon: const Icon(Icons.fastfood, color: Colors.white),
@@ -160,6 +166,7 @@ class _RekomendasiPageState extends State<RekomendasiPage> {
 
               const SizedBox(height: 30),
 
+              // Hasil Rekomendasi
               if (rekomendasi.isNotEmpty)
                 Expanded(
                   child: Column(
@@ -200,6 +207,30 @@ class _RekomendasiPageState extends State<RekomendasiPage> {
                                       fontWeight: FontWeight.w600,
                                     ),
                                   ),
+                                  onTap: () {
+                                    // cari data makanan dari daftarMakanan
+                                    final hasil = daftarMakanan.firstWhere(
+                                      (item) => item.nama == rekomendasi[index],
+                                      orElse: () => Makanan(
+                                        nama: rekomendasi[index],
+                                        deskripsi: 'Detail tidak ditemukan.',
+                                        gambar: '',
+                                        bahan: [],
+                                        bumbu: [],
+                                        langkah: [],
+                                        saranPenyajian: '',
+                                      ),
+                                    );
+
+                                    // navigasi ke halaman detail
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) =>
+                                            DetailMakananPage(makanan: hasil),
+                                      ),
+                                    );
+                                  },
                                 ),
                               ),
                             );
